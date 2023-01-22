@@ -14,17 +14,17 @@ public class InventoryServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(InventoryServiceApplication.class, args);
     }
-//
+
 //    @Bean
 //    public CommandLineRunner loadData(MongoTemplate mongoTemplate) {
 //        return args -> {
 //            Inventory inventory = new Inventory();
-//            inventory.setProductCode("Iphone_13");
-//            inventory.setQuantity(10);
+//            inventory.setProductCode("Iphone-11");
+//            inventory.setQuantity(1000);
 //
 //            Inventory inventory1 = new Inventory();
-//            inventory1.setQuantity(15);
-//            inventory1.setProductCode("iphone_13_red");
+//            inventory1.setQuantity(1000);
+//            inventory1.setProductCode("Iphone-13");
 //
 //            mongoTemplate.save(inventory1);
 //            mongoTemplate.save(inventory);

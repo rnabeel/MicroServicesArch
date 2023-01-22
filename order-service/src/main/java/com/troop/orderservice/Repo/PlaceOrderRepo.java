@@ -12,8 +12,8 @@ import java.util.*;
 
 @Repository
 public class PlaceOrderRepo {
-    public static String NOT_AVAILABLE = "order is placed";
-    public static String AVAILABLE = "is not available right now";
+    public static String NOT_AVAILABLE = "is not available right now";
+    public static String AVAILABLE = "order is placed";
     @Autowired
     MongoTemplate mongoTemplate;
 
@@ -29,9 +29,13 @@ public class PlaceOrderRepo {
                 OrderLineItems orderLineItems = mapToDto(x, orderProductCode);
                 respAdd.add(orderLineItems);
                 order.setOrderNumber(UUID.randomUUID().toString());
-                respMsg.put(entry.getKey().toString(), NOT_AVAILABLE);
+                respMsg.put(entry.getKey().toString(), AVAILABLE);
             }
-            else respMsg.put(entry.getKey().toString(), AVAILABLE);
+            else{
+                if(!respMsg.containsKey(entry.getKey())) {
+                    respMsg.put(entry.getKey().toString(), NOT_AVAILABLE);
+                }
+            }
         });
     }
 
