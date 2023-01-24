@@ -31,6 +31,7 @@ public class PlaceOrderRepo {
                 order.setOrderNumber(UUID.randomUUID().toString());
                 respMsg.put(entry.getKey().toString(), AVAILABLE);
             }
+
             else{
                 if(!respMsg.containsKey(entry.getKey())) {
                     respMsg.put(entry.getKey().toString(), NOT_AVAILABLE);

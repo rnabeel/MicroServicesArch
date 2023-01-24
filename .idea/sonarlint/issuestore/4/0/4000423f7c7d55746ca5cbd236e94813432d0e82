@@ -1,0 +1,13 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(¢ÍÚ«ûÿÿÿÿ8‚½ÀÔİ0
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’öÈ8†½ÀÔİ0
+S
+java:S2589'"7Remove this expression which always evaluates to "true"(©éˆC8Ç½ÀÔİ0
+>
+java:S1116*"Remove this empty statement.(ôŸìúÿÿÿÿ8Ô½ÀÔİ0
+M
+java:S1128
+"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Ô½ÀÔİ0
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Ô½ÀÔİ0

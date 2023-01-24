@@ -1,0 +1,16 @@
+
+L
+java:S3740"/Provide the parametrized type for this generic.(º­˜è8Š¯ïÓİ0
+Q
+java:S3740"/Provide the parametrized type for this generic.(·‚Øûÿÿÿÿ8‹¯ïÓİ0
+L
+java:S3740 "/Provide the parametrized type for this generic.(“’à8‹¯ïÓİ0
+s
+java:S1104"]Make INVENTORY_API_URL a static final constant or non-public and provide accessors if needed.(™¸®
+M
+java:S1444"7Make this "public static INVENTORY_API_URL" field final(™¸®
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Îì¿ı
+r
+java:S3008"\Rename this field "INVENTORY_API_URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™¸®
+j
+java:S1128"HRemove this unused import 'com.troop.orderservice.Model.OrderLineItems'.(µûĞ·ûÿÿÿÿ8ã˜²íİ0
