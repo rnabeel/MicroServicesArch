@@ -1,18 +1,21 @@
 package com.troop.orderservice.Model;
 
 import lombok.*;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.*;
 import java.util.List;
-
-@Document("Order_TB")
-@RequiredArgsConstructor
+@Entity
+@Table(name = "orders")
 @Data
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private String orderNumber;
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderLineItems> orderLineItems;
 
 }
+

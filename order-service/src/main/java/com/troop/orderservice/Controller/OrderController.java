@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/placeOrder")
 public class OrderController {
@@ -17,7 +19,7 @@ public class OrderController {
     PlaceOrder placeOrder;
 
     @GetMapping()
-    public ResponseEntity placeOrder(@RequestBody OrderRequest orderRequest) {
-        return new ResponseEntity<>(placeOrder.placeOrder(orderRequest), HttpStatus.OK);
+    public ResponseEntity<Map> placeOrder(@RequestBody OrderRequest orderRequest) {
+         return new ResponseEntity<>(placeOrder.placeOrder(orderRequest), HttpStatus.OK);
     }
 }
