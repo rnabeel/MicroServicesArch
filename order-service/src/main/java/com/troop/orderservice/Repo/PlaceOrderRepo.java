@@ -13,11 +13,11 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import static com.troop.orderservice.cfg.OrderConstants.AVAILABLE;
+import static com.troop.orderservice.cfg.OrderConstants.NOT_AVAILABLE;
+
 @Repository
 public class PlaceOrderRepo {
-    public String NOT_AVAILABLE = "is not available right now";
-    public String AVAILABLE = "order is placed";
-    public Boolean TRUE = true;
 
     @Autowired
     private OrderRepository orderRepository;
@@ -25,8 +25,8 @@ public class PlaceOrderRepo {
     public Map orderRepo(Map<String, Integer> responseData, OrderRequest orderRequest, String CustomerId) {
         Map responseMessage = new HashMap<>();
         List<OrderLineItems> ListOfOrderLineItems = new ArrayList<>();
-
         Order order = new Order();
+
 
         for (Map.Entry entry : responseData.entrySet()) {
             orderRequest.getOrderItemsList().forEach(x -> {

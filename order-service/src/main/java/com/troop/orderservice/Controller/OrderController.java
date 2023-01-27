@@ -13,13 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
+import static com.troop.orderservice.cfg.OrderURI.BASE_URI;
+import static com.troop.orderservice.cfg.OrderURI.PLACEORDER_URI;
+
 @RestController
-@RequestMapping("/placeOrder")
+@RequestMapping(BASE_URI)
 public class OrderController {
     @Autowired
     PlaceOrder placeOrder;
 
-    @GetMapping()
+    @GetMapping(PLACEORDER_URI)
     public ResponseEntity<Map> placeOrder(@RequestBody OrderRequest orderRequest) throws JsonProcessingException {
          return new ResponseEntity<>(placeOrder.placeOrder(orderRequest), HttpStatus.OK);
     }

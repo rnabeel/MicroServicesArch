@@ -1,21 +1,18 @@
 package com.troop.orderservice.InterService;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.Map;
-import java.util.Optional;
+
+import static com.troop.orderservice.cfg.OrderURI.WEBCLIENT_BASE_URL;
 
 @Component
 @AllArgsConstructor
 public class WebClientBroker {
-
-//    private final WebClient webClient;
 
     public Map postRequest(String URL, String json, String ... bearertoken){
         System.out.println(bearertoken);
@@ -26,7 +23,7 @@ public class WebClientBroker {
         header.add("Authorization",bearertoken[0]);
         }
 
-    WebClient webClient = WebClient.create("http://localhost:8083");
+    WebClient webClient = WebClient.create(WEBCLIENT_BASE_URL);
     return  webClient
             .post()
             .uri(URL)

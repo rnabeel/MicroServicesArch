@@ -12,10 +12,11 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
 
+import static com.troop.orderservice.cfg.OrderURI.INVENTORY_API_URL;
+
 @Service
 @AllArgsConstructor
 public class PlaceOrderImpl implements PlaceOrder {
-    public static String INVENTORY_API_URL = "/inventory/isInStock";
     @Autowired
     RestTemplate restTemplate;
     @Autowired
