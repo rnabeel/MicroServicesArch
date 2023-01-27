@@ -22,7 +22,7 @@ public class PlaceOrderRepo {
     @Autowired
     private OrderRepository orderRepository;
 
-    public Map orderRepo(Map<String, Integer> responseData, OrderRequest orderRequest) {
+    public Map orderRepo(Map<String, Integer> responseData, OrderRequest orderRequest, String CustomerId) {
         Map responseMessage = new HashMap<>();
         List<OrderLineItems> ListOfOrderLineItems = new ArrayList<>();
 
@@ -48,7 +48,7 @@ public class PlaceOrderRepo {
         }
 
         order.setOrderLineItems(ListOfOrderLineItems);
-
+        order.setCustcode(orderRequest.getCustomerId());
         orderRepository.save(order);
         return responseMessage;
     }

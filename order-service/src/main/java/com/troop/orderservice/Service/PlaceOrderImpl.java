@@ -34,6 +34,6 @@ public class PlaceOrderImpl implements PlaceOrder {
         Map responseData = webClientBroker.postRequest(INVENTORY_API_URL,json);
 
         assert responseData != null;
-        return placeOrderRepo.orderRepo(responseData,orderRequest);
+        return placeOrderRepo.orderRepo(responseData,orderRequest,orderRequest.getCustomerId());
     }
 }

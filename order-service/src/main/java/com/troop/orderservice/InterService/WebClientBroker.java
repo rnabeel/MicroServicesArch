@@ -17,11 +17,14 @@ public class WebClientBroker {
 
 //    private final WebClient webClient;
 
-    public Map postRequest(String URL, String json){
-
+    public Map postRequest(String URL, String json, String ... bearertoken){
+        System.out.println(bearertoken);
     MultiValueMap<String, String> header = new LinkedMultiValueMap<>();
         header.add("Content-Type", "application/json");
         header.add("Accept", "application/json");
+        if(bearertoken.equals("[]")) {
+        header.add("Authorization",bearertoken[0]);
+        }
 
     WebClient webClient = WebClient.create("http://localhost:8083");
     return  webClient

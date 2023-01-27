@@ -7,5 +7,5 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderRequest {
 private List<OrderLineItemsDto> orderItemsList;
-
+private String customerId;
 }
