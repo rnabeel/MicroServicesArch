@@ -12,13 +12,13 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/inventory")
+@RequestMapping("/inventory")
 public class InventoryController {
 
     @Autowired
     InventoryService inventoryService;
 
-    @PostMapping()
+    @PostMapping("/isInStock")
     @ResponseStatus(HttpStatus.OK)
     public Map<String, Boolean> isInStock(@RequestBody Map<String,Integer> checkQuantityPerCode) {
        return inventoryService.checkInventory(checkQuantityPerCode);

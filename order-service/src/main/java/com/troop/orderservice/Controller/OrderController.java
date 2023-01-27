@@ -1,5 +1,6 @@
 package com.troop.orderservice.Controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.troop.orderservice.Dto.OrderRequest;
 import com.troop.orderservice.Service.PlaceOrder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class OrderController {
     PlaceOrder placeOrder;
 
     @GetMapping()
-    public ResponseEntity<Map> placeOrder(@RequestBody OrderRequest orderRequest) {
+    public ResponseEntity<Map> placeOrder(@RequestBody OrderRequest orderRequest) throws JsonProcessingException {
          return new ResponseEntity<>(placeOrder.placeOrder(orderRequest), HttpStatus.OK);
     }
 }
