@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 import static com.troop.orderservice.cfg.OrderURI.BASE_URI;
 import static com.troop.orderservice.cfg.OrderURI.PLACEORDER_URI;
@@ -23,7 +25,7 @@ public class OrderController {
     PlaceOrder placeOrder;
 
     @GetMapping(PLACEORDER_URI)
-    public ResponseEntity<Map> placeOrder(@RequestBody OrderRequest orderRequest) throws JsonProcessingException {
-         return new ResponseEntity<>(placeOrder.placeOrder(orderRequest), HttpStatus.OK);
+    public CompletableFuture<ResponseEntity<?>> placeOrder(@RequestBody OrderRequest orderRequest) throws JsonProcessingException, ExecutionException, InterruptedException {
+         return placeOrder.placeOrder(orderRequest).thenApply(ResponseEntity::ok);
     }
 }
