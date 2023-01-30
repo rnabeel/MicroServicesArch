@@ -19,6 +19,7 @@ public class InventoryController {
     @PostMapping("/isInStock")
     @ResponseStatus(HttpStatus.OK)
     public  Map<String, Boolean> isInStock(@RequestBody Map<String,Integer> checkQuantityPerCode) throws InterruptedException {
+//        Thread.sleep(10000);
        return InventoryServiceImpl.checkInventory(checkQuantityPerCode);
     }
 

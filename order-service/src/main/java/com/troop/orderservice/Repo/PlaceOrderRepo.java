@@ -27,7 +27,6 @@ public class PlaceOrderRepo {
         List<OrderLineItems> ListOfOrderLineItems = new ArrayList<>();
         Order order = new Order();
 
-
         for (Map.Entry entry : responseData.entrySet()) {
             orderRequest.getOrderItemsList().forEach(x -> {
                 String orderProductCode = x.getProductCode();
